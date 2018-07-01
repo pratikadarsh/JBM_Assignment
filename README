@@ -1,0 +1,49 @@
+This folder contains the solution for the image classification problem. It has been implemented in TensorFlow.
+
+This folder contains the following files/directories:
+
+	1) run.py - This is the starter module.
+	2) data_loader.py - This module performs tasks related to data loading and preprocessing.
+        3) train.py - Module for training the deep learning module(CNN).
+	4) predict.py - Module for performing prediction on a single image.
+	5) estimator.py - This contains code for creating various TensorFlow Estimator ops and data.
+	6) models.py - This contains code describing the architecture of the deep learning model. Currently a CNN is being built.
+	7) foo.pkl - Pickle file containing image data(all 107) in serialized form.
+	8) model - TensorFlow related directory containing information related to the deep learning model created after training.
+
+
+There are two functions that can be performed in this directory by running the 'run.py' file. This file can be run in two modes:
+
+	1) train - Here a CNN will be trained based on the input images.
+	2) predict - This mode will predict the class of a single input image.
+
+Below is the help information for run.py.
+
+usage: run.py [-h] [--image IMAGE] [--arch ARCH] [--batch_size BATCH_SIZE]
+              [--learning_rate LEARNING_RATE] [--num_steps NUM_STEPS]
+              [--shuffle SHUFFLE]
+              mode
+
+positional arguments:
+  mode                  train/predict
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --image IMAGE
+  --arch ARCH           the ML model to be used.
+  --batch_size BATCH_SIZE
+                        size of the mini batch
+  --learning_rate LEARNING_RATE
+                        learning rate
+  --num_steps NUM_STEPS
+                        number of steps
+  --shuffle SHUFFLE     flag to shuffle the dataset before training
+
+
+Example for train mode.
+
+python run.py train 
+
+Example for predict mode.
+
+python run.py predict --image <path_to_image>
